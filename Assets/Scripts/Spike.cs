@@ -16,7 +16,7 @@ public class Spike : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            SceneManager.LoadScene(sceneName);
+            SceneManager.LoadScene(sceneName); //identical to "light" script, also needs to be changed
             Debug.Log("player stepped on spike");
         }
     }

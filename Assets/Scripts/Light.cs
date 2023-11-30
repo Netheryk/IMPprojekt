@@ -16,7 +16,7 @@ public class Light : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            SceneManager.LoadScene(sceneName);
+            SceneManager.LoadScene(sceneName); //for now collision reloads current scene, should instead damage/kill player
             Debug.Log("player touched light");
         }
     }
