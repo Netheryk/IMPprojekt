@@ -5,9 +5,11 @@ using UnityEngine;
 public class JumpController : MonoBehaviour
 {
     [SerializeField] float jumpPower = 9f;
+    [SerializeField] float fallingGravityScale = 2.5f;
 
     private Rigidbody2D rb;
     bool isGrounded;
+    int jumpsLeft;
     public Transform groundCheck;
     public LayerMask groundLayer;
 
@@ -21,9 +23,24 @@ public class JumpController : MonoBehaviour
     void Update()
     {
         isGrounded = Physics2D.OverlapBox(groundCheck.position, new Vector2(1f, 0.3f), 0,groundLayer); //checks if a nonexistent collider overlaps the "Ground" Layer
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if(isGrounded) //double jump
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpPower); //jump feels fine, should change gravity during fall so it feels better
+            jumpsLeft = 1;
+        }
+
+        if (Input.GetButtonDown("Jump") && jumpsLeft > 0)
+        {
+            jumpsLeft--;
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+        }
+
+        if (rb.velocity.y < 0) //change gravity during fall for more satisfying jump
+        {
+            rb.gravityScale = fallingGravityScale;
+        }
+        else
+        {
+            rb.gravityScale = 1.5f;
         }
     }
 }
