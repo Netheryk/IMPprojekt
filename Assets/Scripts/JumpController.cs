@@ -6,10 +6,11 @@ public class JumpController : MonoBehaviour
 {
     [SerializeField] float jumpPower = 9f;
     [SerializeField] float fallingGravityScale = 2.5f;
+    [SerializeField] float baseGravityScale = 1.5f;
 
     private Rigidbody2D rb;
     bool isGrounded;
-    int jumpsLeft;
+    byte jumpCounter;
     public Transform groundCheck;
     public LayerMask groundLayer;
 
@@ -17,6 +18,7 @@ public class JumpController : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        rb.gravityScale = baseGravityScale;
     }
 
     // Update is called once per frame
@@ -25,12 +27,13 @@ public class JumpController : MonoBehaviour
         isGrounded = Physics2D.OverlapBox(groundCheck.position, new Vector2(1f, 0.3f), 0,groundLayer); //checks if a nonexistent collider overlaps the "Ground" Layer
         if(isGrounded) //double jump
         {
-            jumpsLeft = 1;
+            jumpCounter = 1;
+            rb.gravityScale = baseGravityScale;
         }
 
-        if (Input.GetButtonDown("Jump") && jumpsLeft > 0)
+        if (Input.GetButtonDown("Jump") && jumpCounter > 0)
         {
-            jumpsLeft--;
+            jumpCounter--;
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
         }
 
@@ -40,7 +43,7 @@ public class JumpController : MonoBehaviour
         }
         else
         {
-            rb.gravityScale = 1.5f;
+            rb.gravityScale = baseGravityScale;
         }
     }
 }
