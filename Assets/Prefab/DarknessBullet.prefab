@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2528157735776426563}
   - component: {fileID: 5492945765498975982}
   - component: {fileID: 5958381432365861380}
-  - component: {fileID: 8281698385514736018}
   - component: {fileID: 8941038609592525499}
   m_Layer: 0
   m_Name: DarknessBullet
@@ -30,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0.166, y: 0.403, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.15, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -114,19 +113,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8281698385514736018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6561393511974363665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a447afa6b06e5f649a3ffc6a07284b93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletSpeed: 5
 --- !u!70 &8941038609592525499
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
