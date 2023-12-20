@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8286828140672844475}
   - component: {fileID: 4284343654760072017}
   - component: {fileID: 2645583020594256719}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LightDamageArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}

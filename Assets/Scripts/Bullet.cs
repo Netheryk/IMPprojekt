@@ -7,6 +7,8 @@ using UnityEngine.Rendering.Universal;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] float bulletSpeed = 5f;
+    [SerializeField] float bulletTime = 5f;
+
     Light2D collidedLight;
     Rigidbody2D bulletRb;
     // Start is called before the first frame update
@@ -18,7 +20,8 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        bulletRb.velocity = new Vector2(bulletSpeed,0);
+        bulletRb.velocity = transform.right * bulletSpeed;
+        Destroy(gameObject, bulletTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,6 +31,13 @@ public class Bullet : MonoBehaviour
             collidedLight = collision.GetComponent<Light2D>();
             collidedLight.intensity = 0.2f;
         }
-        collision.CompareTag("LightHitbox");
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
+    //THIS IS 2 SCRIPTS FOR AIMING IN ONE SCRIPT, NEITHER OF THEM WORK
     Transform bulletSpawner;
     Vector3 cursorPosition;
     float angleToCursor;
@@ -34,6 +35,7 @@ public class Shoot : MonoBehaviour
         */
         //transform.rotation = transform.rotation * Quaternion.Euler(0, 0, rotZ); //rotation of bulletspawner around player to the cursor
         if(Input.GetButtonUp("Fire1"))
+
         {
         }
     }

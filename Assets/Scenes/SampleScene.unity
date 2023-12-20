@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 108867230}
   - component: {fileID: 108867233}
   - component: {fileID: 108867234}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -822,7 +822,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
@@ -24878,8 +24878,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00034999847, y: 0.001349926, z: 0}
-    m_Extent: {x: 10.99945, y: 11.000851, z: 0}
+    m_Center: {x: 0.0014500618, y: -0.0075001717, z: 0}
+    m_Extent: {x: 10.99955, y: 10.9981, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -25365,10 +25365,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1425347139}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7803d7eab5f5a7541a84fb80627da51f, type: 3}
+  m_Script: {fileID: 11500000, guid: 59c6c06caf7a00145a40352d4f1e0cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 6561393511974363665, guid: d1bb429918cafa646ab2cf3e343eb55c, type: 3}
+  bullet: {fileID: 6561393511974363665, guid: d1bb429918cafa646ab2cf3e343eb55c, type: 3}
+  bulletSpawner: {fileID: 1491891364}
+  bulletSpeed: 1000
+  bulletTime: 5
 --- !u!1 &1491891364
 GameObject:
   m_ObjectHideFlags: 0
@@ -34781,6 +34784,14 @@ PrefabInstance:
       propertyPath: m_PointLightOuterRadius
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 410408728879474324, guid: a414ef96f4f278e499b4441a5dae34a6, type: 3}
+      propertyPath: m_TagString
+      value: LightHitbox
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234473669612264508, guid: a414ef96f4f278e499b4441a5dae34a6, type: 3}
+      propertyPath: m_TagString
+      value: LightHitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 1481724473758501136, guid: a414ef96f4f278e499b4441a5dae34a6, type: 3}
       propertyPath: m_Name
       value: BasicLamp
@@ -34830,63 +34841,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a414ef96f4f278e499b4441a5dae34a6, type: 3}
---- !u!1001 &7065351130442807094
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2528157735776426563, guid: d1bb429918cafa646ab2cf3e343eb55c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2528157735776426563, guid: d1bb429918cafa646ab2cf3e343eb55c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2528157735776426563, guid: d1bb429918cafa646ab2cf3e343eb55c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2528157735776426563, guid: d1bb429918cafa646ab2cf3e343eb55c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2528157735776426563, guid: d1bb429918cafa646ab2cf3e343eb55c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2528157735776426563, guid: d1bb429918cafa646ab2cf3e343eb55c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2528157735776426563, guid: d1bb429918cafa646ab2cf3e343eb55c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2528157735776426563, guid: d1bb429918cafa646ab2cf3e343eb55c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2528157735776426563, guid: d1bb429918cafa646ab2cf3e343eb55c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2528157735776426563, guid: d1bb429918cafa646ab2cf3e343eb55c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6561393511974363665, guid: d1bb429918cafa646ab2cf3e343eb55c, type: 3}
-      propertyPath: m_Name
-      value: DarknessBullet
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d1bb429918cafa646ab2cf3e343eb55c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -34896,4 +34850,3 @@ SceneRoots:
   - {fileID: 2037236279}
   - {fileID: 108867232}
   - {fileID: 590964940}
-  - {fileID: 7065351130442807094}
